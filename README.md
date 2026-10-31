@@ -20,7 +20,7 @@ Developed by **majkls12** with assistance from **OpenAI ChatGPT**. The implement
 
 ## Installation
 
-1. Download `ezviz.js` from this repository.
+1. Download `ezviz-t55.js` from this repository.
 2. Place it in the `external_converters` directory beside your Zigbee2MQTT `configuration.yaml`, or use the Zigbee2MQTT frontend's external converter editor where supported.
 3. Restart/reload Zigbee2MQTT as appropriate and verify that the converter loads.
 4. Pair the valve or verify that the existing paired valve resolves to this definition.
