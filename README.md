@@ -12,7 +12,7 @@ Developed by **majkls12** with assistance from **OpenAI ChatGPT**. The implement
 
 - Target heating setpoint, current temperature, and on/off (`system_mode`) control.
 - Heating activity (`heating_active`) and climate `running_state` (`heat` / `idle`), based on observed nonstandard `hvacThermostat.systemMode` reports (`4` / `16`).
-- Battery percentage reports (ignores unreliable explicit-read value `200`).
+- Battery percentage reporting (experimental; reported values may be inconsistent or inaccurate).
 - Child lock, manual/holiday operating mode, holiday target temperature.
 - Local temperature calibration, open-window detection, anti-scale protection, frost protection.
 
@@ -26,6 +26,10 @@ Developed by **majkls12** with assistance from **OpenAI ChatGPT**. The implement
 4. Pair the valve or verify that the existing paired valve resolves to this definition.
 
 **Compatibility:** developed against the Zigbee2MQTT 2.7.2-dev environment. Other versions have not been systematically tested. Recent Zigbee2MQTT versions may require explicitly enabling external JavaScript (`enable_external_js`). See the [official external converter documentation](https://www.zigbee2mqtt.io/advanced/more/external_converters.html).
+
+## Known issue: unreliable battery percentage
+
+Battery reporting is **not yet reliable**. The valve sometimes reports unexpected or inconsistent battery percentage values, so the displayed battery level should not currently be treated as an accurate indication of remaining capacity. The converter ignores an observed unreliable explicit-read value of `200`, but this does **not** resolve the underlying reporting behavior. Further investigation of the device's battery reports, raw values and conversion logic is needed.
 
 ## Known issue: failed IAS enrollment during interview
 
